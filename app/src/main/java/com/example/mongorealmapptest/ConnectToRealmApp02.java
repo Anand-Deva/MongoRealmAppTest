@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.mongorealmapptest.DataModel.Koerpertemperatur;
+import com.example.mongorealmapptest.DataModel.ModuleApp02;
 
 import org.bson.types.ObjectId;
 
@@ -51,6 +52,7 @@ public class ConnectToRealmApp02{
                     if(user!= null){
 
                         SyncConfiguration config = new SyncConfiguration.Builder(user, _partition)
+                                .modules(new ModuleApp02())
                                 .allowQueriesOnUiThread(true)
                                 .allowWritesOnUiThread(true)
                                 .build();
