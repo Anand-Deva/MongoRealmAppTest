@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.mongorealmapptest.DataModel.Blutzucker;
+import com.example.mongorealmapptest.DataModel.ModuleApp01;
 
 import org.bson.types.ObjectId;
 
@@ -50,6 +51,7 @@ public class ConnectToRealmApp01{
                     User user = app.currentUser();
                     if(user!= null){
                         SyncConfiguration config = new SyncConfiguration.Builder(user, _partition)
+                                .modules(new ModuleApp01())
                                 .allowQueriesOnUiThread(true)
                                 .allowWritesOnUiThread(true)
                                 .build();
